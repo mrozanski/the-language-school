@@ -365,6 +365,10 @@
     gap: var(--spacing-lg);
     margin: var(--spacing-xl) 0;
   }
+
+  .grid-vertical {
+    grid-template-columns: 1fr;
+  }
   
   .card {
     background-color: var(--color-white);

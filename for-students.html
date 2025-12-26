@@ -68,7 +68,7 @@
         <section>
             <div class="container content-narrow">
                 <h2 class="text-center">How It Works</h2>
-                <div class="grid">
+                <div class="grid grid-vertical">
                     <div class="card">
                         <h3>Step 1 - schedule a free evaluation</h3>
                         <p>Find out your level through a conversational assessment to determine the best place to start</p>
@@ -85,15 +85,14 @@
             </div>
         </section>
 
-        <!-- Popular Courses -->
+        <!-- Call to Action -->
         <section>
-            <div class="container content-narrow">
-                <h2 class="text-center">Popular Courses</h2>
-                <ul class="feature-list">
-                    <li>Fundamentos de inglés 1</li>
-                    <li>Spanish Foundations 1</li>
-                    <li>Weekend + Evening Classes</li>
-                </ul>
+            <div class="container content-narrow text-center">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Join thousands of students who have transformed their lives through conversation-based learning.</p>
+                <div class="hero-cta">
+                    <button type="button" class="btn btn-primary" id="openEvaluationModal">Booke Your Free Evaluation</button>
+                </div>
             </div>
         </section>
 
@@ -125,7 +124,7 @@
                 <h2>Ready to Start?</h2>
                 <p>Book your free evaluation today and discover your path to fluency.</p>
                 <div class="hero-cta">
-                    <a href="#" class="btn btn-primary">Book Your Free Evaluation</a>
+                    <button type="button" class="btn btn-primary" id="openEvaluationModal">Schedule a Free Evaluation</button>
                 </div>
                 <p class="mt-lg">Are you a teacher? <a href="for-teachers.html">Learn about our Teacher Membership Program</a></p>
             </div>
@@ -138,6 +137,33 @@
             <p><a href="index.html">Home</a> | <a href="for-students.html">For Students</a> | <a href="for-teachers.html">For Teachers</a> | <a href="products.html">Products</a> | <a href="investor-relations.html">Investor Relations</a></p>
         </div>
     </footer>
+    <!-- Language Selection Modal -->
+    <div class="modal-overlay" id="evaluationModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+            <div class="modal-content">
+                <h2 id="modalTitle">Choose Your Language</h2>
+                <p class="modal-subtitle">Select the language you'd like to learn:</p>
+                <div class="language-options">
+                    <a href="https://learn.thelanguageschool.us/conversationalenglishorspanishevaluation" class="language-option">
+                        <div class="language-option-icon">🇺🇸</div>
+                        <div class="language-option-text">
+                            <h3>English</h3>
+                            <p>Start speaking English with confidence</p>
+                        </div>
+                    </a>
+                    <a href="https://learn.thelanguageschool.us/conversationalspanishevaluation" class="language-option">
+                        <div class="language-option-icon">🇪🇸</div>
+                        <div class="language-option-text">
+                            <h3>Spanish</h3>
+                            <p>Start speaking Spanish with confidence</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/modal.js"></script>
 </body>
 </html>
 
