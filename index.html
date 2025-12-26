@@ -41,9 +41,8 @@
                 <p>Traditional classes move too slow. Our conversation-based method helps you start talking from Day 1.</p>
                 <h2>Start Your Journey Today</h2>
                 <div class="hero-cta">
-                    <a href="https://learn.thelanguageschool.us/conversationalenglishorspanishevaluation" class="btn btn-primary">Free Evaluation</a>
-                    <a href="https://learn.thelanguageschool.us/conversationalspanishevaluation" class="btn btn-primary">Free Evaluation - Spanish</a>
-                    <a href="https://letsgo.thelanguageschool.us/lst-membership" class="btn btn-primary">Become a Teacher</a>
+                    <button type="button" class="btn btn-primary" id="openEvaluationModal">Schedule a Free Evaluation</button>
+                    <a href="https://letsgo.thelanguageschool.us/lst-membership" class="btn btn-secondary">Become a Teacher</a>
                 </div>
             </div>
         </section>
@@ -133,6 +132,35 @@
             <p><a href="index.html">Home</a> | <a href="for-students.html">For Students</a> | <a href="for-teachers.html">For Teachers</a> | <a href="products.html">Products</a> | <a href="investor-relations.html">Investor Relations</a></p>
         </div>
     </footer>
+
+    <!-- Language Selection Modal -->
+    <div class="modal-overlay" id="evaluationModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+            <div class="modal-content">
+                <h2 id="modalTitle">Choose Your Language</h2>
+                <p class="modal-subtitle">Select the language you'd like to learn:</p>
+                <div class="language-options">
+                    <a href="https://learn.thelanguageschool.us/conversationalenglishorspanishevaluation" class="language-option">
+                        <div class="language-option-icon">🇺🇸</div>
+                        <div class="language-option-text">
+                            <h3>English</h3>
+                            <p>Start speaking English with confidence</p>
+                        </div>
+                    </a>
+                    <a href="https://learn.thelanguageschool.us/conversationalspanishevaluation" class="language-option">
+                        <div class="language-option-icon">🇪🇸</div>
+                        <div class="language-option-text">
+                            <h3>Spanish</h3>
+                            <p>Start speaking Spanish with confidence</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modal.js"></script>
 </body>
 </html>
 
