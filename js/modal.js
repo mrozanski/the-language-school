@@ -8,9 +8,9 @@
 
     // Get modal elements
     const modal = document.getElementById('evaluationModal');
-    const openButton = document.getElementById('openEvaluationModal');
+    const openButtons = document.querySelectorAll('[data-modal-trigger="evaluationModal"]');
     const closeButton = document.getElementById('closeModal');
-    const languageOptions = modal.querySelectorAll('.language-option');
+    const languageOptions = modal ? modal.querySelectorAll('.language-option') : [];
 
     // Store the element that opened the modal (for focus management)
     let previouslyFocusedElement = null;
@@ -106,10 +106,10 @@
         }
     }
 
-    // Event listeners
-    if (openButton) {
-        openButton.addEventListener('click', openModal);
-    }
+    // Event listeners - attach to all open buttons
+    openButtons.forEach(button => {
+        button.addEventListener('click', openModal);
+    });
 
     if (closeButton) {
         closeButton.addEventListener('click', closeModal);
