@@ -313,7 +313,7 @@
      ============================================ */
   
   section {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
   }
   
   .section-header {
@@ -371,7 +371,7 @@
     grid-template-columns: 1fr;
   }
   
-  .card {
+  .card, .review-card {
     background-color: var(--color-white);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
@@ -467,6 +467,73 @@
     color: var(--color-charcoal);
     opacity: 0.7;
     margin-top: var(--spacing-xs);
+  }
+  
+  /* ============================================
+     Video Embeds
+     ============================================ */
+  
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius);
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+  }
+  
+  .video-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .video-item h3 {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .video-item p {
+    margin-bottom: 0;
+  }
+  
+  .map-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin: var(--spacing-xl) 0;
+    border-radius: var(--border-radius);
+  }
+  
+  .map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  @media (max-width: 768px) {
+    .video-grid {
+      grid-template-columns: 1fr;
+    }
   }
   
   /* ============================================
@@ -763,6 +830,349 @@
     
     nav ul {
       gap: var(--spacing-sm);
+    }
+  }
+
+  /* ============================================
+     Google Reviews Widget
+     ============================================ */
+
+  #google-reviews-widget {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .google-reviews-widget-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  /* Summary Section (Top) */
+  .google-reviews-summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    gap: var(--spacing-md);
+  }
+
+  .summary-rating-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .summary-rating-text .rating-large {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+  }
+
+  .summary-stars {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .summary-stars svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .summary-rating-text .nowrap {
+    white-space: nowrap;
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+  }
+
+  .summary-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .summary-logo .google-logo {
+    height: 35px;
+    width: auto;
+  }
+
+  /* Reviews List Section (Bottom) */
+  .google-reviews-list {
+    width: 100%;
+    position: relative;
+  }
+
+  .reviews-container {
+    overflow-x: hidden;
+  }
+
+  .reviews-container-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
+
+  .review-card {
+    display: flex;
+    flex: 0 0 calc((100% - (2 * var(--spacing-md))) / 3);
+    min-width: 275px;
+  }
+
+  .review-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    position: relative;
+  }
+
+  .review-profile-img {
+    flex-shrink: 0;
+  }
+
+  .review-profile-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .review-profile-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .review-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-charcoal);
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+
+  .review-date {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.3;
+  }
+
+  .review-google-icon {
+    flex-shrink: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .review-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: var(--spacing-xs) 0;
+  }
+
+  .review-stars svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 4px;
+  }
+
+  .verified-badge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .review-text-container {
+    margin: var(--spacing-xs) 0;
+    text-align: left;
+  }
+
+  .review-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-charcoal);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    transition: -webkit-line-clamp var(--transition);
+  }
+
+  .review-text.expanded {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
+  }
+
+  .review-read-more {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 4px 0;
+    text-align: center;
+    margin-top: var(--spacing-xs);
+    transition: color var(--transition);
+  }
+
+  .review-read-more:hover {
+    color: var(--color-brand-blue);
+  }
+
+  /* Carousel Controls */
+  .reviews-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .reviews-controls button {
+    position: absolute;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .reviews-controls button:hover:not(:disabled) {
+    background-color: var(--color-off-white);
+    border-color: var(--color-brand-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .reviews-controls button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .reviews-controls button svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-charcoal);
+  }
+
+  .review-prev {
+    left: -20px;
+  }
+
+  .review-next {
+    right: -20px;
+  }
+
+  .reviews-controls-line {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: var(--spacing-sm);
+  }
+
+  .reviews-controls-line .dot {
+    width: 8px;
+    height: 2px;
+    background-color: var(--color-gray-medium);
+    border-radius: 1px;
+  }
+
+  /* Responsive Design for Reviews Widget */
+  @media (max-width: 1024px) {
+    .review-card {
+      flex: 0 0 calc((100% - var(--spacing-md)) / 2);
+      min-width: 250px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .google-reviews-widget-container {
+      gap: var(--spacing-lg);
+    }
+
+    .google-reviews-summary {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-md) 0;
+    }
+
+    .review-card {
+      flex: 0 0 100%;
+      min-width: 280px;
+    }
+
+    .review-prev {
+      left: -10px;
+    }
+
+    .review-next {
+      right: -10px;
+    }
+
+    .reviews-controls button {
+      width: 36px;
+      height: 36px;
+    }
+
+    .reviews-controls button svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .google-reviews-widget-container {
+      gap: var(--spacing-md);
+    }
+
+    .summary-stars svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .review-prev {
+      left: -5px;
+    }
+
+    .review-next {
+      right: -5px;
+    }
+
+    .reviews-controls button {
+      width: 32px;
+      height: 32px;
     }
   }
   
