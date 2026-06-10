@@ -1,0 +1,353 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thelanguageschool.us/js/books-data.schema.json",
+  "title": "The Language School — Books Catalog",
+  "description": "Curated catalog of books by Mr. David E. Stevens III, organized by language and TLS teaching level. Amazon is the purchase source; this file controls how books appear on the website.",
+  "type": "object",
+  "required": ["meta", "sections"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional pointer to this schema file. Use: ./books-data.schema.json"
+    },
+    "meta": {
+      "$ref": "#/$defs/Meta"
+    },
+    "sections": {
+      "type": "array",
+      "description": "Top-level groupings by target language. Typically two entries: english and spanish.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Section"
+      }
+    }
+  },
+  "$defs": {
+    "Meta": {
+      "type": "object",
+      "description": "Page-level metadata for the books catalog.",
+      "required": ["title", "author", "amazonAuthorUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Page heading shown on the books page.",
+          "examples": ["Books by David E. Stevens III"]
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Optional tagline under the page heading.",
+          "examples": ["Conversation-based workbooks aligned with The Language School levels."]
+        },
+        "author": {
+          "type": "string",
+          "description": "Author name as it should appear on the site.",
+          "examples": ["Mr. David E. Stevens III"]
+        },
+        "amazonAuthorUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical Amazon author store URL. Used for a fallback 'View all on Amazon' link.",
+          "examples": [
+            "https://www.amazon.com/stores/author/B01IDSUEBA/allbooks"
+          ]
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO date (YYYY-MM-DD) when this catalog was last reviewed or edited."
+        }
+      }
+    },
+    "Section": {
+      "type": "object",
+      "description": "A language section containing TLS levels and their books.",
+      "required": ["id", "title", "levels"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug for the section. Use lowercase with hyphens.",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "examples": ["english", "spanish"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Display heading for this language group.",
+          "examples": ["English Books", "Spanish Books"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional intro paragraph shown above the level groups in this section."
+        },
+        "levels": {
+          "type": "array",
+          "description": "TLS teaching levels within this language, ordered from beginner to advanced.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Level"
+          }
+        }
+      }
+    },
+    "Level": {
+      "type": "object",
+      "description": "A TLS course level and the books that support it.",
+      "required": ["id", "number", "title", "books"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug unique within the catalog. Prefer {language}-level-{number}.",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "examples": ["english-level-1", "spanish-level-3"]
+        },
+        "number": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "TLS level number used for sorting and labels.",
+          "examples": [1, 2, 3]
+        },
+        "title": {
+          "type": "string",
+          "description": "Display label for the level heading.",
+          "examples": ["Level 1 — Beginner", "Level 2 — High Beginner"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional short blurb describing what students learn at this level."
+        },
+        "books": {
+          "type": "array",
+          "description": "Books assigned to this TLS level. Leave as [] if no book exists yet for this level.",
+          "items": {
+            "$ref": "#/$defs/Book"
+          }
+        }
+      }
+    },
+    "Book": {
+      "type": "object",
+      "description": "A single published book. Populate from Amazon, then curate TLS-specific fields (level, description, cover path).",
+      "required": ["id", "title", "description", "amazonUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug unique across the entire catalog. Prefer lowercase title words or ASIN.",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "examples": ["lets-start-talking-english-level-1"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Book title exactly as it should appear on the site (may differ slightly from Amazon).",
+          "examples": ["Let's Start Talking!"]
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Optional secondary line under the title (edition, level hint, series name).",
+          "examples": ["English Level 1 Workbook", "5 Easy Steps Series"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Short student-friendly summary for the book card (1–3 sentences). Write for TLS students, not copied verbatim from Amazon.",
+          "minLength": 1
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "Optional longer text for an expanded detail view or modal. Omit if not needed."
+        },
+        "series": {
+          "type": "string",
+          "description": "Optional series or collection name if the book belongs to one.",
+          "examples": ["Let's Start Talking!", "5 Easy Steps to Speak Spanish with Confidence"]
+        },
+        "seriesOrder": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Optional position within a series (1 = first book)."
+        },
+        "audience": {
+          "type": "string",
+          "enum": ["student", "teacher", "both"],
+          "description": "Primary audience. Default mentally to 'student' if unclear."
+        },
+        "formats": {
+          "type": "array",
+          "description": "Available purchase formats. Extract from Amazon listing.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["paperback", "hardcover", "kindle", "audiobook", "workbook", "spiral-bound"]
+          },
+          "examples": [["paperback", "kindle"]]
+        },
+        "asin": {
+          "type": "string",
+          "description": "Amazon Standard Identification Number (10 characters, often starts with B for books). Primary stable Amazon product ID.",
+          "pattern": "^[A-Z0-9]{10}$",
+          "examples": ["B012345678"]
+        },
+        "isbn13": {
+          "type": "string",
+          "description": "ISBN-13 if available (13 digits, hyphens optional).",
+          "pattern": "^(?:97[89][- ]?)?\\d[- ]?\\d{3}[- ]?\\d{5}[- ]?\\d$|^\\d{13}$"
+        },
+        "isbn10": {
+          "type": "string",
+          "description": "ISBN-10 if available (10 characters)."
+        },
+        "amazonUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct Amazon product URL for the primary format (usually paperback or Kindle). Use https://www.amazon.com/dp/{ASIN} when possible.",
+          "examples": ["https://www.amazon.com/dp/B012345678"]
+        },
+        "coverImage": {
+          "type": "string",
+          "description": "Site-relative path to a locally hosted cover image. Download from Amazon and save under img/books/. Omit until the image file exists.",
+          "examples": ["img/books/lets-start-talking-en-l1.jpg"]
+        },
+        "coverImageAlt": {
+          "type": "string",
+          "description": "Accessible alt text for the cover. Usually: 'Cover of {title}'."
+        },
+        "publicationYear": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100,
+          "description": "Year of publication if known."
+        },
+        "pageCount": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of pages if listed on Amazon."
+        },
+        "languageOfInstruction": {
+          "type": "string",
+          "enum": ["english", "spanish", "bilingual"],
+          "description": "Language the book is written in (not the language being taught). 'bilingual' for dual-language materials."
+        },
+        "tags": {
+          "type": "array",
+          "description": "Optional keywords for filtering or future search (e.g. conversation, grammar, travel).",
+          "items": {
+            "type": "string"
+          },
+          "examples": [["conversation", "beginner", "workbook"]]
+        },
+        "featured": {
+          "type": "boolean",
+          "description": "If true, the renderer may highlight this book (e.g. top of level or hero placement). Default false."
+        },
+        "buyLinks": {
+          "type": "array",
+          "description": "Optional additional purchase links beyond Amazon.",
+          "items": {
+            "$ref": "#/$defs/BuyLink"
+          }
+        }
+      }
+    },
+    "BuyLink": {
+      "type": "object",
+      "description": "A secondary retailer or format-specific purchase link.",
+      "required": ["label", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Button or link text.",
+          "examples": ["Kindle Edition", "Teachers Pay Teachers"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Full URL to the product page."
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "$schema": "./books-data.schema.json",
+      "meta": {
+        "title": "Books by David E. Stevens III",
+        "subtitle": "Workbooks organized by The Language School level.",
+        "author": "Mr. David E. Stevens III",
+        "amazonAuthorUrl": "https://www.amazon.com/stores/author/B01IDSUEBA/allbooks",
+        "lastUpdated": "2026-05-31"
+      },
+      "sections": [
+        {
+          "id": "english",
+          "title": "English Books",
+          "description": "Books for Spanish speakers learning English, aligned with TLS English levels.",
+          "levels": [
+            {
+              "id": "english-level-1",
+              "number": 1,
+              "title": "Level 1 — Beginner",
+              "description": "Start speaking English from your first lesson.",
+              "books": [
+                {
+                  "id": "lets-start-talking-english-level-1",
+                  "title": "Let's Start Talking!",
+                  "subtitle": "English Level 1",
+                  "description": "A conversation-first workbook for true beginners. Practice real dialogues from day one.",
+                  "series": "Let's Start Talking!",
+                  "seriesOrder": 1,
+                  "audience": "student",
+                  "formats": ["paperback", "kindle"],
+                  "asin": "B012345678",
+                  "isbn13": "9781234567890",
+                  "amazonUrl": "https://www.amazon.com/dp/B012345678",
+                  "coverImage": "img/books/lets-start-talking-en-l1.jpg",
+                  "coverImageAlt": "Cover of Let's Start Talking! English Level 1",
+                  "publicationYear": 2020,
+                  "pageCount": 120,
+                  "languageOfInstruction": "bilingual",
+                  "tags": ["conversation", "beginner", "workbook"],
+                  "featured": true
+                }
+              ]
+            },
+            {
+              "id": "english-level-2",
+              "number": 2,
+              "title": "Level 2 — High Beginner",
+              "books": []
+            }
+          ]
+        },
+        {
+          "id": "spanish",
+          "title": "Spanish Books",
+          "description": "Books for English speakers learning Spanish, aligned with TLS Spanish levels.",
+          "levels": [
+            {
+              "id": "spanish-level-1",
+              "number": 1,
+              "title": "Level 1 — Beginner",
+              "books": [
+                {
+                  "id": "5-easy-steps-spanish-confidence",
+                  "title": "5 Easy Steps to Speak Spanish with Confidence",
+                  "description": "Build practical Spanish speaking skills through guided conversation exercises.",
+                  "series": "5 Easy Steps to Speak Spanish with Confidence",
+                  "seriesOrder": 1,
+                  "audience": "student",
+                  "formats": ["paperback", "kindle"],
+                  "amazonUrl": "https://www.amazon.com/dp/B098765432",
+                  "languageOfInstruction": "english",
+                  "tags": ["conversation", "beginner"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

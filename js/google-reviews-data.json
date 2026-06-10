@@ -1,0 +1,64 @@
+{
+  "summary": {
+    "rating": 5,
+    "totalReviews": 166,
+    "ratingText": "Excelente"
+  },
+  "reviews": [
+    {
+      "id": "review-1",
+      "author": {
+        "name": "Giorginna",
+        "photo": "https://lh3.googleusercontent.com/a/ACg8ocJAtYS4_jpy0u3V0exhiof4ujLbWMq1VrorMWgDqrosM7f8lw=s64-c-rp-mo-br100"
+      },
+      "rating": 5,
+      "date": "3 Diciembre 2025",
+      "text": "My husband searched on Google for a 5-star school so I could enroll to learn English. We are so happy we chose and trusted this language school. My classes are virtual and in groups, and I have learned so much. Now I can communicate with my husband and his American family. Thank you so much, Professor David. I am in level 3.",
+      "verified": true
+    },
+    {
+      "id": "review-2",
+      "author": {
+        "name": "Stacey Chang",
+        "photo": "https://lh3.googleusercontent.com/a/ACg8ocLQWpYIF7INH18rC1-CUrC4cOn6bhXaRKnbJTDiapEUydlNng=s120-c-rp-mo-br100"
+      },
+      "rating": 5,
+      "date": "13 Octubre 2022",
+      "text": "My fiance from Korea went to David's classes to learn English while he's visiting me for 3 months. the classes are very small, with average 3 students per class. He really enjoyed his classes and learned alot. He also meet some great people at the school to share each others culture, which was another great opportunity. David is an amazing teacher and highly recommend! We would like to come back to take his classes again when he eventually move to the US in the near future!",
+      "verified": true
+    },
+    {
+      "id": "review-3",
+      "author": {
+        "name": "Karl Kaeten",
+        "photo": "https://lh3.googleusercontent.com/a-/ALV-UjUd2Ru9wL2MvuekFZagfeWz7kBtQfjMjcq6DQ86lmFjQK4PebtM=s120-c-rp-mo-br100"
+      },
+      "rating": 5,
+      "date": "15 Septiembre 2022",
+      "text": "Learning anything is a bit of a risk, to put oneself in a position of feeling like you don't know anything.  Learning Spanish is difficult but David has the patience and the experience to lay it out--he says don't be hard on yourself for not learning at the pace you would maybe like, but he also shows how the process works and can demonstrate progress to you in a single class.  What that class taught me was how to organize my efforts to learn Spanish.  It's not easy but I see now how to apply myself and am excited to continue my work, knowing that nothing worth having is easy, but with some effort, it is possible.",
+      "verified": true
+    },
+    {
+      "id": "review-4",
+      "author": {
+        "name": "stéphane descamps",
+        "photo": "https://lh3.googleusercontent.com/a/ACg8ocJEqkyecdxrwrZgyvrqUAWOyQcmQpwMAFRCXPzvW0LO6T09AQ=s120-c-rp-mo-br100"
+      },
+      "rating": 5,
+      "date": "1 Agosto 2022",
+      "text": "It's been almost 2 months now that I've been following an English course, being French my oral comprehension of English was quite mediocre but since then I feel more at ease. Moreover the teacher David was always listening to my expectations and directed the course in this direction.",
+      "verified": true
+    },
+    {
+      "id": "review-5",
+      "author": {
+        "name": "Margaret Emerson",
+        "photo": "https://lh3.googleusercontent.com/a/ACg8ocJ37Q4NgEkct73IUKweLlVe3Re8FSHubvfuDz2qjTklt4i58w=s120-c-rp-mo-br100"
+      },
+      "rating": 5,
+      "date": "14 Abril 2022",
+      "text": "I've been taking Spanish classes with Professor David for the last month. The conversational teaching method he uses is so much more applicable than the Spanish I was taught in school. I'm learning Spanish because our family enjoys traveling to Costa Rica. Even after only a few weeks of class I was able to have basic exchanges in Costa and I picked up more than I anticipated.  Highly recommended The Language School!!",
+      "verified": true
+    }
+  ]
+}

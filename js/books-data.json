@@ -1,0 +1,668 @@
+{
+  "$schema": "./books-data.schema.json",
+  "meta": {
+    "title": "Books by David E. Stevens III",
+    "subtitle": "Workbooks organized by The Language School level.",
+    "author": "Mr. David E. Stevens III",
+    "amazonAuthorUrl": "https://www.amazon.com/stores/author/B01IDSUEBA/allbooks",
+    "lastUpdated": "2026-05-31"
+  },
+  "sections": [
+    {
+      "id": "english",
+      "title": "English Books",
+      "description": "Books for Spanish speakers learning English, aligned with TLS English levels.",
+      "levels": [
+        {
+          "id": "english-level-1",
+          "number": 1,
+          "title": "Level 1 — Beginner",
+          "books": [
+            {
+              "id": "ingles-facil-y-divertido-basico-nivel-1-fundamentos",
+              "title": "Inglés",
+              "subtitle": "Fácil y Divertido Básico Nivel 1: Fundamentos",
+              "description": "A beginner-level foundation book that introduces essential vocabulary, core sentence patterns, and simple everyday communication. It is a good fit for students starting from zero or reviewing the basics.",
+              "longDescription": "",
+              "series": "Inglés: Fácil y Divertido Básico",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1492287733",
+              "isbn13": "",
+              "isbn10": "1492287733",
+              "amazonUrl": "https://www.amazon.com/dp/1492287733",
+              "coverImage": "img/books/ingles-facil-y-divertido-basico-nivel-1-fundamentos.webp",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 92,
+              "languageOfInstruction": "spanish",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-start-talking-fundamentos-de-ingles-1",
+              "title": "Let's Start Talking! Fundamentos De Inglés 1",
+              "subtitle": "",
+              "description": "A beginner-level foundation book that introduces essential vocabulary, core sentence patterns, and simple everyday communication. It is a good fit for students starting from zero or reviewing the basics.",
+              "longDescription": "",
+              "series": "Let's Start Talking! Fundamentos de Inglés",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1537710370",
+              "isbn13": "",
+              "isbn10": "1537710370",
+              "amazonUrl": "https://www.amazon.com/dp/1537710370",
+              "coverImage": "img/books/let-s-start-talking-fundamentos-de-ingles-1.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 187,
+              "languageOfInstruction": "spanish",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "5-easy-steps-to-speak-english-with-confidence-become-conversational-in-3-months",
+              "title": "5 Easy Steps To Speak English With Confidence",
+              "subtitle": "Become Conversational In 3 Months Or Less",
+              "description": "A practical starter book for Spanish-speaking students who want to begin speaking English in everyday situations. It focuses on confidence, useful phrases, and steady progress instead of heavy grammar.",
+              "longDescription": "",
+              "series": "5 Easy Steps",
+              "seriesOrder": null,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1540799166",
+              "isbn13": "",
+              "isbn10": "1540799166",
+              "amazonUrl": "https://www.amazon.com/dp/1540799166",
+              "coverImage": "img/books/5-easy-steps-to-speak-english-with-confidence-become-conversational-in-3-months.webp",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 56,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "5-pasos-faciles-para-hablar-ingles-con-confianza-llegar-a-conversar-dentro-de-3",
+              "title": "5 Pasos Fáciles Para Hablar Inglés Con Confianza",
+              "subtitle": "Llegar a conversar dentro de 3 meses",
+              "description": "A practical starter book for Spanish-speaking students who want to begin speaking English in everyday situations. It focuses on confidence, useful phrases, and steady progress instead of heavy grammar.",
+              "longDescription": "",
+              "series": "5 Easy Steps",
+              "seriesOrder": null,
+              "audience": "student",
+              "formats": [
+                "kindle",
+                "paperback"
+              ],
+              "asin": "B0D6ZRK18F",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B0D6ZRK18F",
+              "coverImage": "img/books/5-pasos-faciles-para-hablar-ingles-con-confianza-llegar-a-conversar-dentro-de-3.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 63,
+              "languageOfInstruction": "spanish",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "english-level-2",
+          "number": 2,
+          "title": "Level 2 — High Beginner",
+          "books": [
+            {
+              "id": "let-s-keep-talking-english-for-high-beginners-1",
+              "title": "Let’s Keep Talking! English for High Beginners 1",
+              "subtitle": "",
+              "description": "A bridge book for students who already know the basics and want more speaking practice. It adds useful structures and conversation work without jumping too quickly into advanced material.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! English for High Beginners",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1079959548",
+              "isbn13": "",
+              "isbn10": "1079959548",
+              "amazonUrl": "https://www.amazon.com/dp/1079959548",
+              "coverImage": "img/books/let-s-keep-talking-english-for-high-beginners-1.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 110,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "ingles-facil-y-divertido-basico-nivel-2-presente-simple",
+              "title": "Inglés",
+              "subtitle": "Fácil y Divertido Básico Nivel 2: Presente Simple",
+              "description": "A follow-up beginner book that expands on the basics with more complete sentences and useful grammar. Students can practice building confidence in common daily topics.",
+              "longDescription": "",
+              "series": "Inglés: Fácil y Divertido Básico",
+              "seriesOrder": 2,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1493691872",
+              "isbn13": "",
+              "isbn10": "1493691872",
+              "amazonUrl": "https://www.amazon.com/dp/1493691872",
+              "coverImage": "img/books/ingles-facil-y-divertido-basico-nivel-2-presente-simple.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 92,
+              "languageOfInstruction": "spanish",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-keep-talking-english-for-high-beginners-2",
+              "title": "Let’s Keep Talking! English for High Beginners 2",
+              "subtitle": "",
+              "description": "A bridge book for students who already know the basics and want more speaking practice. It adds useful structures and conversation work without jumping too quickly into advanced material.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! English for High Beginners",
+              "seriesOrder": 2,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1081201312",
+              "isbn13": "",
+              "isbn10": "1081201312",
+              "amazonUrl": "https://www.amazon.com/dp/1081201312",
+              "coverImage": "img/books/let-s-keep-talking-english-for-high-beginners-2.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 88,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-start-talking-fundamentos-de-ingles-2",
+              "title": "Let's Start Talking",
+              "subtitle": "Fundamentos de Inglés 2",
+              "description": "A follow-up beginner book that expands on the basics with more complete sentences and useful grammar. Students can practice building confidence in common daily topics.",
+              "longDescription": "",
+              "series": "Let's Start Talking! Fundamentos de Inglés",
+              "seriesOrder": 2,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1794317090",
+              "isbn13": "",
+              "isbn10": "1794317090",
+              "amazonUrl": "https://www.amazon.com/dp/1794317090",
+              "coverImage": "img/books/let-s-start-talking-fundamentos-de-ingles-2.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 207,
+              "languageOfInstruction": "spanish",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "english-level-3",
+          "number": 3,
+          "title": "Level 3 — Intermediate",
+          "books": [
+            {
+              "id": "english-easy-and-fun-level-3",
+              "title": "English",
+              "subtitle": "Easy and Fun Level 3",
+              "description": "A developing-level book for learners who are ready for longer conversations and more flexible sentence building. It helps students move beyond memorized phrases into guided communication.",
+              "longDescription": "",
+              "series": "English: Easy and Fun",
+              "seriesOrder": 3,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1499627084",
+              "isbn13": "",
+              "isbn10": "1499627084",
+              "amazonUrl": "https://www.amazon.com/dp/1499627084",
+              "coverImage": "img/books/english-easy-and-fun-level-3.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 92,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-start-talking-fundamentos-de-ingles-3",
+              "title": "Let's Start Talking! Fundamentos de Inglés 3",
+              "subtitle": "",
+              "description": "A developing-level book for learners who are ready for longer conversations and more flexible sentence building. It helps students move beyond memorized phrases into guided communication.",
+              "longDescription": "",
+              "series": "Let's Start Talking! Fundamentos de Inglés",
+              "seriesOrder": 3,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "B0DHRPC1GJ",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B0DHRPC1GJ",
+              "coverImage": "img/books/let-s-start-talking-fundamentos-de-ingles-3.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 142,
+              "languageOfInstruction": "spanish",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "english-level-4",
+          "number": 4,
+          "title": "Level 4 — High Intermediate",
+          "books": [
+            {
+              "id": "let-s-keep-talking-intermediate-english-1",
+              "title": "Let’s Keep Talking! Intermediate English 1",
+              "subtitle": "",
+              "description": "An intermediate book for learners who can already handle basic conversations and want to speak with more detail and accuracy. It supports longer responses, stronger vocabulary, and more natural communication.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! Intermediate English",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1687329753",
+              "isbn13": "",
+              "isbn10": "1687329753",
+              "amazonUrl": "https://www.amazon.com/dp/1687329753",
+              "coverImage": "img/books/let-s-keep-talking-intermediate-english-1.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 104,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-keep-talking-intermediate-english-2",
+              "title": "Let’s Keep Talking! Intermediate English 2",
+              "subtitle": "",
+              "description": "An intermediate book for learners who can already handle basic conversations and want to speak with more detail and accuracy. It supports longer responses, stronger vocabulary, and more natural communication.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! Intermediate English",
+              "seriesOrder": 2,
+              "audience": "student",
+              "formats": [
+                "hardcover",
+                "paperback"
+              ],
+              "asin": "1697681786",
+              "isbn13": "",
+              "isbn10": "1697681786",
+              "amazonUrl": "https://www.amazon.com/dp/1697681786",
+              "coverImage": "img/books/let-s-keep-talking-intermediate-english-2.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 112,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-keep-talking-intermediate-english-3",
+              "title": "Let’s Keep Talking! Intermediate English 3",
+              "subtitle": "",
+              "description": "An intermediate book for learners who can already handle basic conversations and want to speak with more detail and accuracy. It supports longer responses, stronger vocabulary, and more natural communication.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! Intermediate English",
+              "seriesOrder": 3,
+              "audience": "student",
+              "formats": [
+                "hardcover",
+                "paperback"
+              ],
+              "asin": "1702073475",
+              "isbn13": "",
+              "isbn10": "1702073475",
+              "amazonUrl": "https://www.amazon.com/dp/1702073475",
+              "coverImage": "img/books/let-s-keep-talking-intermediate-english-3.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 135,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "english-easy-and-fun-level-4-how-to-make-friends-in-the-united-states",
+              "title": "English Easy and Fun Level 4",
+              "subtitle": "How to Make Friends in the United States",
+              "description": "A student-friendly language book designed to support speaking, reading, and everyday communication practice. It can be used for guided study, review, or extra confidence-building work.",
+              "longDescription": "",
+              "series": "English Easy and Fun",
+              "seriesOrder": 4,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1546582762",
+              "isbn13": "",
+              "isbn10": "1546582762",
+              "amazonUrl": "https://www.amazon.com/dp/1546582762",
+              "coverImage": "img/books/english-easy-and-fun-level-4-how-to-make-friends-in-the-united-states.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 93,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-keep-talking-intermediate-english-4",
+              "title": "Let’s Keep Talking! Intermediate English 4",
+              "subtitle": "",
+              "description": "An intermediate book for learners who can already handle basic conversations and want to speak with more detail and accuracy. It supports longer responses, stronger vocabulary, and more natural communication.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! Intermediate English",
+              "seriesOrder": 4,
+              "audience": "student",
+              "formats": [
+                "hardcover",
+                "paperback"
+              ],
+              "asin": "B083XW6BMZ",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B083XW6BMZ",
+              "coverImage": "img/books/let-s-keep-talking-intermediate-english-4.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 118,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "english-level-5",
+          "number": 5,
+          "title": "Level 5 — Advanced",
+          "books": [
+            {
+              "id": "let-s-keep-talking-advanced-english-1",
+              "title": "Let’s Keep Talking! Advanced English 1",
+              "subtitle": "",
+              "description": "An advanced-level book for students who are ready to express more complex ideas in English. It is suited to learners who want deeper fluency, richer vocabulary, and stronger conversation skills.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! Advanced English",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "B0BF9NBBDB",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B0BF9NBBDB",
+              "coverImage": "img/books/let-s-keep-talking-advanced-english-1.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 135,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "english-level-6",
+          "number": 6,
+          "title": "Level 6 — Mastery",
+          "books": []
+        }
+      ]
+    },
+    {
+      "id": "spanish",
+      "title": "Spanish Books",
+      "description": "Books for English speakers learning Spanish, aligned with TLS Spanish levels.",
+      "levels": [
+        {
+          "id": "spanish-level-1",
+          "number": 1,
+          "title": "Level 1 — Beginner",
+          "books": [
+            {
+              "id": "let-s-start-talking-spanish-foundations-1-a-beginner-s-level-guide-to-speaking-s",
+              "title": "Let's Start Talking! Spanish Foundations 1",
+              "subtitle": "A beginner’s level guide to speaking Spanish",
+              "description": "A beginner-level foundation book that introduces essential vocabulary, core sentence patterns, and simple everyday communication. It is a good fit for students starting from zero or reviewing the basics.",
+              "longDescription": "",
+              "series": "Let's Start Talking! Spanish",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1534685189",
+              "isbn13": "",
+              "isbn10": "1534685189",
+              "amazonUrl": "https://www.amazon.com/dp/1534685189",
+              "coverImage": "img/books/let-s-start-talking-spanish-foundations-1-a-beginner-s-level-guide-to-speaking-s.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 191,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "5-easy-steps-to-speak-spanish-with-confidence-become-conversational-in-3-months",
+              "title": "5 Easy Steps to Speak Spanish with Confidence",
+              "subtitle": "Become Conversational in 3 Months or Less",
+              "description": "A friendly introduction for English-speaking students who want to start using Spanish in real conversations. It keeps the focus on common expressions, simple practice, and building confidence fast.",
+              "longDescription": "",
+              "series": "5 Easy Steps",
+              "seriesOrder": null,
+              "audience": "student",
+              "formats": [
+                "hardcover",
+                "kindle",
+                "paperback"
+              ],
+              "asin": "B098CBZNDJ",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B098CBZNDJ",
+              "coverImage": "img/books/5-easy-steps-to-speak-spanish-with-confidence-become-conversational-in-3-months.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 62,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-start-talking-a-bilingual-book-for-english-and-spanish-students",
+              "title": "Let's Start Talking",
+              "subtitle": "A bilingual book for English and Spanish students!",
+              "description": "A bilingual practice book that lets students compare English and Spanish side by side. It works well for beginners who learn best by seeing both languages together.",
+              "longDescription": "",
+              "series": "Let's Start Talking!",
+              "seriesOrder": null,
+              "audience": "student",
+              "formats": [
+                "hardcover",
+                "kindle",
+                "paperback"
+              ],
+              "asin": "B01IRO5RGW",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B01IRO5RGW",
+              "coverImage": "img/books/let-s-start-talking-a-bilingual-book-for-english-and-spanish-students.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 68,
+              "languageOfInstruction": "bilingual",
+              "tags": [
+                "Bilingual resource; level placement inferred"
+              ],
+              "featured": false,
+              "buyLinks": []
+            },
+            {
+              "id": "let-s-start-talking-espanol-basico-una-guia-basica-para-hablar-espanol",
+              "title": "Let's Start Talking - Español Básico",
+              "subtitle": "Una guía básica para hablar español",
+              "description": "A beginner-level foundation book that introduces essential vocabulary, core sentence patterns, and simple everyday communication. It is a good fit for students starting from zero or reviewing the basics.",
+              "longDescription": "",
+              "series": "Let's Start Talking! Spanish",
+              "seriesOrder": null,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "1985341573",
+              "isbn13": "",
+              "isbn10": "1985341573",
+              "amazonUrl": "https://www.amazon.com/dp/1985341573",
+              "coverImage": "img/books/let-s-start-talking-espanol-basico-una-guia-basica-para-hablar-espanol.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 127,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "spanish-level-2",
+          "number": 2,
+          "title": "Level 2 — High Beginner",
+          "books": []
+        },
+        {
+          "id": "spanish-level-3",
+          "number": 3,
+          "title": "Level 3 — Intermediate",
+          "books": [
+            {
+              "id": "let-s-start-talking-spanish-foundations-3",
+              "title": "Let’s Start Talking! Spanish Foundations 3",
+              "subtitle": "",
+              "description": "A developing-level book for learners who are ready for longer conversations and more flexible sentence building. It helps students move beyond memorized phrases into guided communication.",
+              "longDescription": "",
+              "series": "Let's Start Talking! Spanish",
+              "seriesOrder": 3,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "B0B7BQ5WFW",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B0B7BQ5WFW",
+              "coverImage": "img/books/let-s-start-talking-spanish-foundations-3.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 142,
+              "languageOfInstruction": "english",
+              "tags": [
+                "Level inferred from title; series level 2 not listed on source page"
+              ],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "spanish-level-4",
+          "number": 4,
+          "title": "Level 4 — High Intermediate",
+          "books": [
+            {
+              "id": "let-s-keep-talking-espanol-intermedio-1",
+              "title": "Let's Keep Talking! Español Intermedio 1",
+              "subtitle": "",
+              "description": "An intermediate book for learners who can already handle basic conversations and want to speak with more detail and accuracy. It supports longer responses, stronger vocabulary, and more natural communication.",
+              "longDescription": "",
+              "series": "Let's Keep Talking! Español Intermedio",
+              "seriesOrder": 1,
+              "audience": "student",
+              "formats": [
+                "paperback"
+              ],
+              "asin": "B0BJHCXZBB",
+              "isbn13": "",
+              "isbn10": "",
+              "amazonUrl": "https://www.amazon.com/dp/B0BJHCXZBB",
+              "coverImage": "img/books/let-s-keep-talking-espanol-intermedio-1.jpg",
+              "coverImageAlt": "",
+              "publicationYear": null,
+              "pageCount": 132,
+              "languageOfInstruction": "english",
+              "tags": [],
+              "featured": false,
+              "buyLinks": []
+            }
+          ]
+        },
+        {
+          "id": "spanish-level-5",
+          "number": 5,
+          "title": "Level 5 — Advanced",
+          "books": []
+        },
+        {
+          "id": "spanish-level-6",
+          "number": 6,
+          "title": "Level 6 — Mastery",
+          "books": []
+        }
+      ]
+    }
+  ]
+}
