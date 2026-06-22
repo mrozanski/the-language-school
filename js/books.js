@@ -54,6 +54,14 @@
         }, 0);
     }
 
+    function countAvailableBooks(section) {
+        return section.levels.reduce(function (total, level) {
+            return total + level.books.filter(function (book) {
+                return !book.comingSoon;
+            }).length;
+        }, 0);
+    }
+
     function renderFormatTags(formats) {
         if (!formats || !formats.length) {
             return '';
@@ -93,31 +101,36 @@
 
     function renderBookCard(book) {
         const heading = getDisplayHeading(book);
+        const isComingSoon = Boolean(book.comingSoon);
         const coverMarkup = book.coverImage
             ? `<img src="${escapeHtml(book.coverImage)}" alt="${escapeHtml(getCoverAlt(book))}" class="book-cover" loading="lazy">`
-            : `<div class="book-cover book-cover-placeholder" aria-hidden="true"><span>No cover</span></div>`;
+            : `<div class="book-cover book-cover-placeholder" aria-hidden="true"><span>${isComingSoon ? 'Coming soon' : 'No cover'}</span></div>`;
 
         const secondaryLine = heading.secondary
             ? `<p class="book-subtitle">${escapeHtml(heading.secondary)}</p>`
             : '';
+
+        const coverBlock = isComingSoon
+            ? `<div class="book-cover-link book-cover-link--static">${coverMarkup}</div>`
+            : `<a href="${escapeHtml(book.amazonUrl)}" class="book-cover-link" target="_blank" rel="noopener noreferrer">${coverMarkup}</a>`;
+
+        const actionMarkup = isComingSoon
+            ? `<span class="book-status book-status--coming-soon">Coming Soon</span>`
+            : `<a href="${escapeHtml(book.amazonUrl)}" class="btn btn-primary book-buy" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>`;
 
         // Layout test: formats + description hidden — restore lines below when decided
         // <div class="book-formats">${renderFormatTags(book.formats)}</div>
         // <p class="book-description">${escapeHtml(book.description)}</p>
 
         return `
-            <article class="book-card card" id="book-${escapeHtml(book.id)}">
-                <a href="${escapeHtml(book.amazonUrl)}" class="book-cover-link" target="_blank" rel="noopener noreferrer">
-                    ${coverMarkup}
-                </a>
+            <article class="book-card card${isComingSoon ? ' book-card--coming-soon' : ''}" id="book-${escapeHtml(book.id)}">
+                ${coverBlock}
                 <div class="book-body">
                     <h4 class="book-title">${escapeHtml(heading.primary)}</h4>
                     ${secondaryLine}
                     ${renderMetaLine(book)}
                     ${renderPlacementNote(book)}
-                    <a href="${escapeHtml(book.amazonUrl)}" class="btn btn-primary book-buy" target="_blank" rel="noopener noreferrer">
-                        Buy on Amazon
-                    </a>
+                    ${actionMarkup}
                 </div>
             </article>
         `;
@@ -129,13 +142,30 @@
         }
 
         const cards = level.books.map(renderBookCard).join('');
+        const availableCount = level.books.filter(function (book) {
+            return !book.comingSoon;
+        }).length;
+        const comingSoonCount = level.books.length - availableCount;
+        let countLabel = `${level.books.length} book${level.books.length === 1 ? '' : 's'}`;
+
+        if (comingSoonCount && availableCount) {
+            countLabel = `${availableCount} available · ${comingSoonCount} coming soon`;
+        } else if (comingSoonCount && !availableCount) {
+            countLabel = `${comingSoonCount} coming soon`;
+        }
+
+        const headerMarkup = level.title
+            ? `
+                <div class="books-level-header">
+                    <h3>${escapeHtml(level.title)}</h3>
+                    <span class="books-level-count">${countLabel}</span>
+                </div>
+            `
+            : '';
 
         return `
             <div class="books-level" id="${escapeHtml(level.id)}">
-                <div class="books-level-header">
-                    <h3>${escapeHtml(level.title)}</h3>
-                    <span class="books-level-count">${level.books.length} book${level.books.length === 1 ? '' : 's'}</span>
-                </div>
+                ${headerMarkup}
                 <div class="books-grid">
                     ${cards}
                 </div>
@@ -145,6 +175,7 @@
 
     function renderSection(section) {
         const bookCount = countBooks(section);
+        const availableCount = countAvailableBooks(section);
         if (!bookCount) {
             return '';
         }
@@ -154,12 +185,19 @@
             return '';
         }
 
+        const comingSoonCount = bookCount - availableCount;
+        let sectionCountLabel = `${availableCount} available`;
+
+        if (comingSoonCount) {
+            sectionCountLabel += ` · ${comingSoonCount} coming soon`;
+        }
+
         return `
             <section class="books-section" id="section-${escapeHtml(section.id)}" aria-labelledby="heading-${escapeHtml(section.id)}">
                 <div class="books-section-header">
                     <h2 id="heading-${escapeHtml(section.id)}">${escapeHtml(section.title)}</h2>
                     <p class="books-section-description">${escapeHtml(section.description || '')}</p>
-                    <p class="books-section-count">${bookCount} book${bookCount === 1 ? '' : 's'}</p>
+                    <p class="books-section-count">${sectionCountLabel}</p>
                 </div>
                 ${levels}
             </section>
@@ -172,7 +210,7 @@
                 return countBooks(section) > 0;
             })
             .map(function (section) {
-                const count = countBooks(section);
+                const count = countAvailableBooks(section);
                 return `
                     <a href="#section-${escapeHtml(section.id)}" class="books-jump-link" data-section="${escapeHtml(section.id)}">
                         ${escapeHtml(section.title)} <span class="books-jump-count">(${count})</span>
@@ -186,7 +224,7 @@
         }
 
         return `
-            <nav class="books-jump-nav" aria-label="Browse by language">
+            <nav class="books-jump-nav" aria-label="Browse book categories">
                 ${links}
             </nav>
         `;

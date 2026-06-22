@@ -70,12 +70,12 @@
           "type": "string",
           "description": "Stable slug for the section. Use lowercase with hyphens.",
           "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-          "examples": ["english", "spanish"]
+          "examples": ["english", "spanish", "all-levels", "english-program", "spanish-program"]
         },
         "title": {
           "type": "string",
           "description": "Display heading for this language group.",
-          "examples": ["English Books", "Spanish Books"]
+          "examples": ["English Program", "Spanish Program", "Books for All Levels"]
         },
         "description": {
           "type": "string",
@@ -112,7 +112,7 @@
         "title": {
           "type": "string",
           "description": "Display label for the level heading.",
-          "examples": ["Level 1 — Beginner", "Level 2 — High Beginner"]
+          "examples": ["Foundations", "High Beginner", "Intermediate", "Advanced"]
         },
         "description": {
           "type": "string",
@@ -129,9 +129,23 @@
     },
     "Book": {
       "type": "object",
-      "description": "A single published book. Populate from Amazon, then curate TLS-specific fields (level, description, cover path).",
-      "required": ["id", "title", "description", "amazonUrl"],
-      "additionalProperties": false,
+      "description": "A single published book or a coming-soon placeholder. Populate from Amazon, then curate TLS-specific fields (level, description, cover path).",
+      "oneOf": [
+        {
+          "required": ["id", "title", "description", "amazonUrl"],
+          "properties": {
+            "comingSoon": {
+              "not": { "const": true }
+            }
+          }
+        },
+        {
+          "required": ["id", "title", "description", "comingSoon"],
+          "properties": {
+            "comingSoon": { "const": true }
+          }
+        }
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -241,6 +255,10 @@
           "type": "boolean",
           "description": "If true, the renderer may highlight this book (e.g. top of level or hero placement). Default false."
         },
+        "comingSoon": {
+          "type": "boolean",
+          "description": "If true, the book is listed on the site but not yet available for purchase. Omit amazonUrl and cover fields."
+        },
         "buyLinks": {
           "type": "array",
           "description": "Optional additional purchase links beyond Amazon.",
@@ -248,7 +266,8 @@
             "$ref": "#/$defs/BuyLink"
           }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "BuyLink": {
       "type": "object",

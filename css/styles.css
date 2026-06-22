@@ -1245,7 +1245,7 @@
     border-bottom: 3px solid var(--color-teal);
   }
 
-  #section-spanish .books-level-header {
+  #section-spanish-program .books-level-header {
     border-bottom-color: var(--color-brand-blue);
   }
 
@@ -1374,6 +1374,44 @@
     margin-top: auto;
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
+  }
+
+  .book-cover-link--static {
+    cursor: default;
+  }
+
+  .book-card--coming-soon {
+    opacity: 0.92;
+  }
+
+  .book-card--coming-soon:hover {
+    transform: none;
+  }
+
+  .book-card--coming-soon .book-cover-placeholder {
+    background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-white) 100%);
+    font-weight: 600;
+    text-align: center;
+    padding: var(--spacing-sm);
+  }
+
+  .book-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    margin-top: auto;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .book-status--coming-soon {
+    background-color: var(--color-gray-light);
+    color: var(--color-charcoal);
+    border: 2px dashed var(--color-gray-medium);
   }
 
   .books-footer-cta {
