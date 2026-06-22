@@ -210,10 +210,9 @@
                 return countBooks(section) > 0;
             })
             .map(function (section) {
-                const count = countAvailableBooks(section);
                 return `
                     <a href="#section-${escapeHtml(section.id)}" class="books-jump-link" data-section="${escapeHtml(section.id)}">
-                        ${escapeHtml(section.title)} <span class="books-jump-count">(${count})</span>
+                        ${escapeHtml(section.title)}
                     </a>
                 `;
             })

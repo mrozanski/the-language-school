@@ -8,10 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=6157446b58">
 </head>
 <body>
     <header>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CM08H0RN6N"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-CM08H0RN6N');
+        </script>
         <div class="container header-content">
             <div class="logo">
                 <a href="index.html">
@@ -47,10 +56,8 @@
                 
                 <div class="card mt-lg">
                     <h3>📚 Books</h3>
-                    <ul class="feature-list">
-                        <li>Let's Start Talking!</li>
-                        <li>5 Easy Steps to Speak Spanish with Confidence</li>
-                    </ul>
+                    <p>Books by David E. Stevens III, organized by TLS level — cleaner than browsing Amazon.</p>
+                    <p class="mt-lg"><a href="books.html" class="btn btn-primary">Browse Books by Level</a></p>
                 </div>
 
                 <div class="card mt-lg">
@@ -101,7 +108,8 @@
                 <h2>Ready to Get Started?</h2>
                 <p>Explore our products and find the resources that fit your learning or teaching needs.</p>
                 <div class="hero-cta">
-                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <a href="books.html" class="btn btn-primary">Browse Books</a>
+                    <a href="https://www.teacherspayteachers.com/store/the-language-school" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Teachers Pay Teachers</a>
                 </div>
             </div>
         </section>
@@ -110,7 +118,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 The Language School. All rights reserved.</p>
-            <p><a href="index.html">Home</a> | <a href="for-students.html">For Students</a> | <a href="for-teachers.html">For Teachers</a> | <a href="products.html">Products</a> | <a href="investor-relations.html">Investor Relations</a></p>
+            <p><a href="index.html">Home</a> | <a href="for-students.html">For Students</a> | <a href="for-teachers.html">For Teachers</a> | <a href="products.html">Products</a> | <a href="books.html">Books</a> | <a href="investor-relations.html">Investor Relations</a></p>
         </div>
     </footer>
 </body>
