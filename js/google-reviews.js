@@ -18,10 +18,36 @@
     // Google logo - try to use official one, fallback to TrustIndex
     const GOOGLE_LOGO_SVG = '<img src="https://cdn.trustindex.io/assets/platform/Google/logo.svg" alt="Google" class="google-logo" width="110" height="35">';
 
+    const LOCALES = {
+        en: {
+            ratingText: 'Excellent',
+            basedOnReviews: function(totalReviews) {
+                return 'Based on <strong>' + totalReviews + ' reviews</strong>';
+            },
+            verifiedReview: 'Verified review',
+            readMore: 'Read more',
+            readLess: 'Show less',
+            prevReview: 'Previous review',
+            nextReview: 'Next review'
+        },
+        es: {
+            ratingText: 'Excelente',
+            basedOnReviews: function(totalReviews) {
+                return 'En base a <strong>' + totalReviews + ' reseñas</strong>';
+            },
+            verifiedReview: 'Reseña verificada',
+            readMore: 'Leer más',
+            readLess: 'Ocultar',
+            prevReview: 'Reseña anterior',
+            nextReview: 'Siguiente reseña'
+        }
+    };
+
     class GoogleReviewsWidget {
-        constructor(containerId, reviewsData) {
+        constructor(containerId, reviewsData, locale) {
             this.container = document.getElementById(containerId);
             this.reviewsData = reviewsData;
+            this.locale = LOCALES[locale] || LOCALES.es;
             this.currentIndex = 0;
             this.itemsPerView = this.getItemsPerView();
             
@@ -120,7 +146,8 @@
         }
 
         generateSummaryHTML() {
-            const { rating, totalReviews, ratingText } = this.reviewsData.summary;
+            const { rating, totalReviews } = this.reviewsData.summary;
+            const ratingText = this.reviewsData.summary.ratingText || this.locale.ratingText;
             return `
                 <div class="card google-reviews-summary">
                     <div class="summary-rating-text">
@@ -130,7 +157,7 @@
                         ${this.generateStars(rating)}
                     </div>
                     <div class="summary-rating-text">
-                        <span class="nowrap">En base a <strong>${totalReviews} reseñas</strong></span>
+                        <span class="nowrap">${this.locale.basedOnReviews(totalReviews)}</span>
                     </div>
                     <div class="summary-logo">
                         ${GOOGLE_LOGO_SVG}
@@ -146,7 +173,7 @@
 
         generateReviewHTML(review, index) {
             const starsHTML = this.generateStars(review.rating);
-            const verifiedBadge = review.verified ? `<span class="verified-badge" title="Reseña verificada">${VERIFIED_BADGE_SVG}</span>` : '';
+            const verifiedBadge = review.verified ? `<span class="verified-badge" title="${this.locale.verifiedReview}">${VERIFIED_BADGE_SVG}</span>` : '';
             
             return `
                 <div class="review-card" data-index="${index}">
@@ -177,9 +204,9 @@
                                 ${this.escapeHtml(review.text)}
                             </div>
                         </div>
-                        <button class="review-read-more" aria-label="Leer más" style="display: none;">
-                            <span class="read-more-text">Leer más</span>
-                            <span class="read-less-text" style="display: none;">Ocultar</span>
+                        <button class="review-read-more" aria-label="${this.locale.readMore}" style="display: none;">
+                            <span class="read-more-text">${this.locale.readMore}</span>
+                            <span class="read-less-text" style="display: none;">${this.locale.readLess}</span>
                         </button>
                     </div>
                 </div>
@@ -200,12 +227,12 @@
 
             return `
                 <div class="reviews-controls">
-                    <button class="review-prev" aria-label="Reseña anterior" ${!showPrev ? 'disabled' : ''}>
+                    <button class="review-prev" aria-label="${this.locale.prevReview}" ${!showPrev ? 'disabled' : ''}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M15 18l-6-6 6-6"/>
                         </svg>
                     </button>
-                    <button class="review-next" aria-label="Siguiente reseña" ${!showNext ? 'disabled' : ''}>
+                    <button class="review-next" aria-label="${this.locale.nextReview}" ${!showNext ? 'disabled' : ''}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 18l6-6-6-6"/>
                         </svg>
@@ -295,30 +322,49 @@
         }
     }
 
-    // Initialize widget when DOM is ready
-    function initGoogleReviewsWidget() {
-        // Try to get data from script tag with id="google-reviews-data"
+    async function loadReviewsData(container) {
         const dataScript = document.getElementById('google-reviews-data');
-        let reviewsData = null;
 
         if (dataScript) {
             try {
-                reviewsData = JSON.parse(dataScript.textContent);
+                return JSON.parse(dataScript.textContent);
             } catch (e) {
                 console.error('Google Reviews Widget: Failed to parse JSON data', e);
             }
         }
 
-        // Fallback: check for global variable
-        if (!reviewsData && typeof window.googleReviewsData !== 'undefined') {
-            reviewsData = window.googleReviewsData;
+        if (typeof window.googleReviewsData !== 'undefined') {
+            return window.googleReviewsData;
         }
 
-        if (reviewsData) {
-            new GoogleReviewsWidget('google-reviews-widget', reviewsData);
-        } else {
-            console.error('Google Reviews Widget: No data found. Add a script tag with id="google-reviews-data" containing JSON.');
+        const src = container.dataset.src || 'js/google-reviews-data.json';
+
+        try {
+            const response = await fetch(src);
+            if (!response.ok) {
+                throw new Error('HTTP ' + response.status);
+            }
+            return await response.json();
+        } catch (e) {
+            console.error('Google Reviews Widget: Failed to load reviews data', e);
+            return null;
         }
+    }
+
+    async function initGoogleReviewsWidget() {
+        const container = document.getElementById('google-reviews-widget');
+        if (!container) {
+            return;
+        }
+
+        const reviewsData = await loadReviewsData(container);
+        if (!reviewsData) {
+            console.error('Google Reviews Widget: No data found.');
+            return;
+        }
+
+        const locale = container.dataset.locale || 'es';
+        new GoogleReviewsWidget('google-reviews-widget', reviewsData, locale);
     }
 
     // Initialize when DOM is ready

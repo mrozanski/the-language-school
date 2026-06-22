@@ -226,6 +226,11 @@
     nav a {
       font-size: 0.9rem;
     }
+
+    /* Last nav item wraps on narrow screens; still linked in footer */
+    header nav ul li:has(a[href*="investor-relations"]) {
+      display: none;
+    }
   }
   
   /* ============================================
@@ -414,6 +419,22 @@
     font-size: 0.9rem;
     color: var(--color-charcoal);
     opacity: 0.8;
+  }
+
+  a.trust-signal-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  a.trust-signal-link:hover .trust-signal-text {
+    opacity: 1;
+    color: var(--color-teal);
+  }
+
+  #reviews,
+  #videos {
+    scroll-margin-top: 5rem;
   }
   
   /* ============================================
